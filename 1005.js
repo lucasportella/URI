@@ -1,0 +1,9 @@
+input = require('fs').readFileSync('stdin','utf-8');
+files = input.split('\n');
+var A = parseFloat(files.shift());
+var B = parseFloat(files.shift());
+var pesoA = A * 3.5;
+var pesoB = B * 7.5;
+var media = (pesoA + pesoB) / 11;
+var media = media.toFixed(5)
+console.log('MEDIA = ' + media)
