@@ -1,18 +1,10 @@
+const { type } = require('os');
+
 var input = require('fs').readFileSync('stdin','utf-8');
+lines = input.split('\n');
 
-var [A, B, C] = input.split(' ');
-A = parseFloat(A);
-B = parseFloat(B);
-C = parseFloat(C);
+var [x1,y1] = lines[0].split(' ');
+var [x2,y2] = lines[1].split(' ');
 
-TRIANGULO = (A * C) /2.0;
-CIRCULO = 3.14159 * Math.pow(C, 2);
-TRAPEZIO = ((A + B)* C)/2.0;
-QUADRADO = B * B;
-RETANGULO = A * B;
-
-console.log('TRIANGULO: ' + TRIANGULO.toFixed(3));
-console.log('CIRCULO: ' + CIRCULO.toFixed(3));
-console.log('TRAPEZIO: ' + TRAPEZIO.toFixed(3));
-console.log('QUADRADO: ' + QUADRADO.toFixed(3));
-console.log('RETANGULO: ' + RETANGULO.toFixed(3));
+distance = Math.sqrt(((x2 - x1)**2) + ((y2 - y1)**2));
+console.log(distance.toFixed(4));
